@@ -1,30 +1,13 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 import openai
 import pandas as pd
 import time
 
-
-# In[2]:
-
-
 # Set up your OpenAI API key
 openai.api_key = ''
-
-
-# In[7]:
-
 
 # Load the Excel file
 file_path = " "
 df = pd.read_excel(file_path)
-
-
-# In[8]:
 
 
 # Function to extract keywords using the chat model
@@ -41,9 +24,6 @@ def extract_keywords(abstract_text):
         temperature=0.5,
     )
     return response.choices[0].message['content'].strip()
-
-
-# In[9]:
 
 
 # Process in batches to avoid rate limits
